@@ -1,1 +1,1 @@
-Esse programa faz uma busca simples de CEP utilazando uma API (Brasilapi).
+Esse programa faz uma busca simples de CEP utilazando uma API.
