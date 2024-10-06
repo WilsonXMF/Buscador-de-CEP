@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de CEP</title>
+</head>
+
+<body>
+    <h1>Buscador de CEP</h1>
+    <script>
+        function buscarCEP() {
+            let cep = prompt("Digite o CEP");
+            let url = "https://brasilapi.com.br/api/cep/v2/" + cep
+
+            fetch(url)
+                .then(function (resposta) {
+                    resposta.json().then(function (dados) {
+                        console.log(dados);
+                        alert(`
+                        Cidade: ${dados.city} 
+                        Bairro: ${dados.neighborhood} 
+                        Rua: ${dados.street}`);
+                    })
+                })
+                .catch(function (erro) {
+                    console.log(`Ocorreu um erro inesperado ${erro}`)
+                })
+        }
+        buscarCEP();
+
+    </script>
+
+</body>
+
+</html>
